@@ -1,6 +1,6 @@
 USE [LDB2]
 GO
-/****** Object:  Table [dbo].[Equipo]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Table [dbo].[Equipo]    Script Date: 5/27/2020 1:15:15 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -20,7 +20,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Evento]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Table [dbo].[Evento]    Script Date: 5/27/2020 1:15:15 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -36,7 +36,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Jugador_Partido]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Table [dbo].[Jugador_Partido]    Script Date: 5/27/2020 1:15:15 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -50,7 +50,7 @@ CREATE TABLE [dbo].[Jugador_Partido](
 	[red_card] [int] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Jugadores]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Table [dbo].[Jugadores]    Script Date: 5/27/2020 1:15:15 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -75,7 +75,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Puntaje_De_Goles]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Table [dbo].[Puntaje_De_Goles]    Script Date: 5/27/2020 1:15:15 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -111,37 +111,37 @@ INSERT [dbo].[Jugadores] ([player_id], [team_name], [Nombre], [PrimerApellido], 
 GO
 INSERT [dbo].[Jugadores] ([player_id], [team_name], [Nombre], [PrimerApellido], [SegundoApellido], [position], [goals_scored], [yellow_cars_recieved], [red_cars_recieved], [jersey_no], [dt_of_bir]) VALUES (10, N'J', N'Shkelzen', N'Gashi', N'Colorado', N'FD', 22, 2, 7, 10, CAST(N'1988-07-15T00:00:00.000' AS DateTime))
 GO
-/****** Object:  Index [UQ__Jugador___2A95337A96B5D0C6]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Index [UQ__Jugador___2A95337A96B5D0C6]    Script Date: 5/27/2020 1:15:15 PM ******/
 ALTER TABLE [dbo].[Jugador_Partido] ADD UNIQUE NONCLUSTERED 
 (
 	[game_week] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [UQ__Jugador___44DA120D02656DC1]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Index [UQ__Jugador___44DA120D02656DC1]    Script Date: 5/27/2020 1:15:15 PM ******/
 ALTER TABLE [dbo].[Jugador_Partido] ADD UNIQUE NONCLUSTERED 
 (
 	[player_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [UQ__Jugador___73BB6B35625C0394]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Index [UQ__Jugador___73BB6B35625C0394]    Script Date: 5/27/2020 1:15:15 PM ******/
 ALTER TABLE [dbo].[Jugador_Partido] ADD UNIQUE NONCLUSTERED 
 (
 	[yellow_card] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [UQ__Jugador___AE160E00C43B218A]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Index [UQ__Jugador___AE160E00C43B218A]    Script Date: 5/27/2020 1:15:15 PM ******/
 ALTER TABLE [dbo].[Jugador_Partido] ADD UNIQUE NONCLUSTERED 
 (
 	[red_card] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [UQ__Puntaje___2A95337A79F8D70C]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Index [UQ__Puntaje___2A95337A79F8D70C]    Script Date: 5/27/2020 1:15:15 PM ******/
 ALTER TABLE [dbo].[Puntaje_De_Goles] ADD UNIQUE NONCLUSTERED 
 (
 	[game_week] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [UQ__Puntaje___44DA120DD01A944F]    Script Date: 5/27/2020 1:16:59 PM ******/
+/****** Object:  Index [UQ__Puntaje___44DA120DD01A944F]    Script Date: 5/27/2020 1:15:15 PM ******/
 ALTER TABLE [dbo].[Puntaje_De_Goles] ADD UNIQUE NONCLUSTERED 
 (
 	[player_id] ASC
